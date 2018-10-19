@@ -1,26 +1,29 @@
-package pl.coderslab.model;
+package pl.coderslab.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "status")
 public class Status {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public float repairAppCost;
     public int inRepair;
     public int ready;
     public int resigned;
 
-    public Status(int id, float repairAppCost, int inRepair, int ready, int resigned) {
-        this.id = id;
-        this.repairAppCost = repairAppCost;
-        this.inRepair = inRepair;
-        this.ready = ready;
-        this.resigned = resigned;
-    }
 
     public Status() {
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public float getRepairAppCost() {
@@ -57,12 +60,12 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status {" +
-                "id= " + id +
-                ", repairAppCost= " + repairAppCost +
-                ", inRepair= " + inRepair +
-                ", ready= " + ready +
-                ", resigned= " + resigned +
+        return "Status{" +
+                "id=" + id +
+                ", repairAppCost=" + repairAppCost +
+                ", inRepair=" + inRepair +
+                ", ready=" + ready +
+                ", resigned=" + resigned +
                 '}';
     }
 }

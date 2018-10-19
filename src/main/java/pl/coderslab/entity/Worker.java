@@ -1,33 +1,32 @@
-package pl.coderslab.model;
+package pl.coderslab.entity;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "vehicles")
 public class Worker {
 
-    public int id;
-    public String name;
-    public String surname;
-    public String address;
-    public int phone;
-    public String notes;
-    public float hourCost;
-
-    public Worker(int id, String name, String surname, String address, int phone, String notes, float hourCost) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.address = address;
-        this.phone = phone;
-        this.notes = notes;
-        this.hourCost = hourCost;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
+    private String surname;
+    private String address;
+    private int phone;
+    private String notes;
+    private float hourCost;
 
     public Worker() {
-
     }
 
     public int getId() {
         return id;
-        }
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -79,14 +78,15 @@ public class Worker {
 
     @Override
     public String toString() {
-        return "Worker {" +
-                "id= " + id +
-                ", name= '" + name + '\'' +
-                ", surname= '" + surname + '\'' +
-                ", address= '" + address + '\'' +
-                ", phone= " + phone +
-                ", notes= '" + notes + '\'' +
-                ", hourCost= " + hourCost +
+        return "Worker{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", address='" + address + '\'' +
+                ", phone=" + phone +
+                ", notes='" + notes + '\'' +
+                ", hourCost=" + hourCost +
                 '}';
     }
 }
+   

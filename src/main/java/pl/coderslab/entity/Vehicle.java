@@ -1,30 +1,32 @@
-package pl.coderslab.model;
+package pl.coderslab.entity;
 
+
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
+@Table(name= "vehicles")
 public class Vehicle {
 
-    public int id;
-    public String model;
-    public String mark;
-    public int year;
-    public String registrationNum;
-    public Date nextReview;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String model;
+    private String mark;
+    private int year;
+    private String registrationNum;
+    private Date nextReview;
+
 
     public Vehicle() {
     }
 
-    public Vehicle(int id, String model, String mark, int year, String registrationNum, Date nextReview) {
-        this.id = id;
-        this.model = model;
-        this.mark = mark;
-        this.year = year;
-        this.registrationNum = registrationNum;
-        this.nextReview = nextReview;
-    }
-
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModel() {
@@ -69,13 +71,13 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle {" +
-                "id =" + id +
-                ", model ='" + model + '\'' +
-                ", mark ='" + mark + '\'' +
-                ", year =" + year +
-                ", registrationNum ='" + registrationNum + '\'' +
-                ", nextReview =" + nextReview +
+        return "Vehicle{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", mark='" + mark + '\'' +
+                ", year=" + year +
+                ", registrationNum='" + registrationNum + '\'' +
+                ", nextReview=" + nextReview +
                 '}';
     }
 }
