@@ -39,7 +39,6 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${orders}" var="orders">
             <tr>
 
                 <td>${orders.id}</td>

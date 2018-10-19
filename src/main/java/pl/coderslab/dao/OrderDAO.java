@@ -15,7 +15,7 @@ public interface OrderDAO {
 
     public void delOrder(Order order) throws SQLException;
 
-    public static ArrayList<Order> loadAllorders() throws SQLException {
+    public default ArrayList<Order> loadAllorders() throws SQLException {
 
             ArrayList<Order> orders = new ArrayList<>();
             String sql = "SELECT * FROM Orders";
